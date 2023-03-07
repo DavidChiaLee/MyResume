@@ -1,0 +1,81 @@
+
+#background-wrap{
+    position: fixed;
+    /* 占滿頁面空間 */
+    bottom : 0 ;
+    left : 0 ;  
+    right : 0 ;
+    top : 0 ;
+    z-index: 10;
+    /* 泡泡不會有任何事件 */
+    pointer-events: none;
+}
+
+.bubble{
+    border-radius:  50%;
+    width : 200px;
+    height : 200px;
+    position: absolute;
+    /* 外部陰影   ,inset屬於內部陰影 */
+    box-shadow: 0 20px 30px rgba(0,0,0,0.2) , 
+        inset 0px 10px 30px 5px rgba(255,255,255,1) ; 
+}
+
+@keyframes animationBubble {
+    /* 泡泡由下往上 */
+    0%{
+        margin-top: 1000px;
+    }
+    100%{
+        margin-top: -100px;
+    }
+}
+
+@keyframes  sideWays{
+    /* 側邊位置 */
+    0%{
+        margin-left: 0px;
+    }
+    100%{
+        margin-left: 50px;
+    }
+}
+
+/* 設定泡泡左右上下跑，動畫可以往前走跟倒者走 */
+/* infinite 表示無限次重複播放。 */
+/* alternate 單數次為正向播放，雙數次為反向播放 */
+.x1{
+    animation: animationBubble 25s linear infinite , 
+    sideWays 3s ease-in-out infinite alternate;
+    left : -5%;
+    top:5%;
+    transform: scale(0.6);
+}
+
+.x2{
+    animation: animationBubble 20s linear infinite ;
+    left : 6%;
+    top:80%;
+    transform: scale(0.4);
+}
+
+.x3{
+    animation: animationBubble 28s linear infinite;
+    left : 50%;
+    top: 60%;
+    transform: scale(0.7);
+}
+
+.x4{
+    animation: animationBubble 22s linear infinite;
+    left : 80%;
+    top: 70%;
+    transform: scale(0.3);
+}
+
+.x5{
+    animation: animationBubble 29s linear infinite ;
+    left : 90%;
+    top: 80%;
+    transform: scale(0.5);
+}
